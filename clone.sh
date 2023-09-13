@@ -4,7 +4,7 @@
 PGPASSWORD=$4 pg_dump -Fc -U $3 -h $1 -p $2 $5 > db.dump
 
 # Drop schema
-PGPASSWORD=$9 pgsql -U $8 -h $6 -p $7 -d ${10} "DO $$ DECLARE
+PGPASSWORD=$9 psql -U $8 -h $6 -p $7 -d ${10} "DO $$ DECLARE
     r RECORD;
 BEGIN
     FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = ${11}) LOOP
