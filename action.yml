@@ -45,6 +45,10 @@ inputs:
     description: 'Database Name of Remote PostgreSQL'
     required: true
     default: 'db-name'
+  to-schema:
+    description: 'Database Name of Remote PostgreSQL'
+    required: true
+    default: 'db-name'
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -59,4 +63,5 @@ runs:
     - ${{ inputs.to-username }}
     - ${{ inputs.to-password }}
     - ${{ inputs.to-database }}
+    - ${{ inputs.to-schema }}
 
